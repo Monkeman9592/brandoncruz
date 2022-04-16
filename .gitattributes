@@ -1,2 +1,11 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+counter = 0
+while counter < 100:
+  print(f“No: {counter}”)
+  break if counter = 0
+  
+  counter += 1
+ 
+ if counter > 0
+ print(f“No: {counter}”)
+ counter -= 1
+© 2022 GitHub, Inc.
