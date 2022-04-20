@@ -1,0 +1,2 @@
+mst = "wackysluch"
+print(mst)
