@@ -31,7 +31,7 @@ front of it. Assign the result to the variable greeting
 '''
 my_name = "hello"
 greeting = "my name is brandon"
-
+print(my_name, greeting)
 '''
 Below is a list of even and odd numbers. Can you write a block of code that loops through the list and tells you whether the number is even of odd?
 '''
