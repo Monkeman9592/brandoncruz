@@ -13,11 +13,11 @@ arizona_tea =d1 ["arizona"]
 mango_smothy = d2["mango"]
 pinea_calada = d2["pineapple"]
  
-#print(banana_bowl ,ice_water, coke_icy, arizona_tea, mango_smothy, pinea_calada)
+print(banana_bowl ,ice_water, coke_icy, arizona_tea, mango_smothy, pinea_calada)
  
  
 d1["banana"] = 3
-#print(d1)
+print(d1)
  
 shoes = {"jordan" : 1, "yeezy" : 8, "foamposite" : 10, "air max" : 5, "SB dunk" : 20, }
  
@@ -46,7 +46,7 @@ print(shoes)
  
 shoes["nike"] = '10'
 shoes["adidas"] = '10'
-shoes["asics"] = '10'
+shoes["asics"] = '10' 
 print(shoes)
  
  
