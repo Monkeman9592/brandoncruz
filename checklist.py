@@ -8,12 +8,8 @@ You can then check or uncheck the entry's checkbox.
 # Create our Checklist
 
 from operator import index
-
-
 checklist = []
-
 print(checklist)
-
 # Define Functions
 def create(item):
     checklist.append(item)
@@ -21,15 +17,12 @@ def create(item):
 def read(index):
       print(checklist[index])
      
-
 def update(index, item):
     checklist[index] = item
      
-
 def destroy(index):
     checklist.pop(index)
      
-
 def mark_completed(index):
     '''
     What we are doing is just trying to "check off" an item that already exist in our list]
@@ -39,17 +32,12 @@ def mark_completed(index):
     'eat veggies" = "* eat veggies"
     '''
     checklist[index] = "* " + checklist[index]
- 
 
 def list_all_items():
 
     for item in checklist:
         print(item)
     
- 
-
-
-
 def select(function_code):
     if function_code == "C":
         input_item = input("Input item: ")
@@ -93,14 +81,11 @@ def select(function_code):
 
         return running
 
-    
-    
-    elif function_code == "Q":        
+    elif function_code == "Q":   
+        print("you have quit")     
         running = False
 
         return running
-
-    
 
 running = True
 
