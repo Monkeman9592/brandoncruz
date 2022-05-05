@@ -6,10 +6,9 @@ You can then check or uncheck the entry's checkbox.
 '''
 
 # Create our Checklist
-
-from operator import index
 checklist = []
 print(checklist)
+
 # Define Functions
 def create(item):
     checklist.append(item)
@@ -45,6 +44,7 @@ def select(function_code):
         running = True
 
         return running
+
     elif function_code == "R":
         '''
         When using input( ) you can only return a string data type, python has four built in functions that help with dealing with different data types and type conversions: type( ) tells you the current type of a data entry, int( ) can change a data type to an integer, str( ) can change a data type to a string and dict( ) / list( ) can change things to a dictionary or list respectively
@@ -53,7 +53,6 @@ def select(function_code):
         read(int(input_item))
         
         running = True
-
 
     elif function_code == "U":
         input_index = input("waht index would you like to call  ")
@@ -84,6 +83,12 @@ def select(function_code):
     elif function_code == "Q":   
         print("you have quit")     
         running = False
+
+        return running
+
+    else:
+        print("Please be sure to enter a valid checklist operation")
+        running = True
 
         return running
 

@@ -39,8 +39,8 @@ print(greeting,my_name)
 '''
 Below is a list of even and odd numbers. Can you write a block of code that loops through the list and tells you whether the number is even of odd?
 '''
-numbers = [0,1, 2, 3, 4, 5, 6, 7, 8, 9]
- 
+numbers = [0,1, 2, 3, 4, 5, 6, 7, 8, 9] 
+
 for x in numbers:
     if x % 2 == 0:
         print(f"{x} is even")
