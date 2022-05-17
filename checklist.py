@@ -95,5 +95,5 @@ def select(function_code):
 running = True
 
 while running:
-    selection =input("Press C to add to list, R to Read from list, L to display list, Q to quit , M to mark completed, U to update,  And D to destroy: ").upper()
+    selection = input("Press C to add to list, R to Read from list, L to display list, Q to quit , M to mark completed, U to update,  And D to destroy: ").upper()
     running = select(selection)

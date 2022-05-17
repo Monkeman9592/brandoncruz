@@ -1,22 +1,48 @@
-# hero.py
-from curses import flash
-
+import random
+import ability
+import armor
 
 class Hero:
-  # We want our hero to have a default "starting_health",
-  # so we can set that in the function header.
-  def __init__(self, name, starting_health=100):
+
+
+  def __init__(self, name = "Hero", starting_health=1000):
     '''Instance properties:
-      name: String
-      starting_health: Integer
-      current_health: Integer
+      name: Her0
+      starting_health: integer
+      current_health: integer
     '''
 
-    # we know the name of our hero, so we assign it here
-    self.name = flash
-    # similarly, our starting health is passed in, just like name
-    self.starting_health = 100
-    # when a hero is created, their current health is
-    # always the same as their starting health (no damage taken yet!)
-    self.current_health = 100
+    self.name = name
+
+    self.starting_health = starting_health
+
+    self.current_health = starting_health 
+
+  def battle(self, opponent):
+    ''' Current Hero will take turns battling the opponent hero passed in.
+    '''
+    heroes_names = []
+    heroes_names.append(self.name)
+    heroes_names.append(opponent.name)
+
+    winner = random.choice (heroes_names)
+    print(winner)
+    # TODO: battle each hero until a victor emerges.
+    # Phases to implement:
+    #1) randomly choose winner, print the name of the victor
+    # Hint: Look into random library, more specifically the choice method
+
+if __name__ == "__main__":
+    # If you run this file from the terminal
+    # this block is executed.
+    hero1 = Hero("Wonder Woman")
+    hero2 = Hero("Dumbledore")
+
+    hero1.battle(hero2)
+
+
+
+
+    
+
 
