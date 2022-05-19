@@ -1,6 +1,4 @@
-from ast import Import
 import random
-
 
 class Ability:
     def __init__ (self, name , max_damage):

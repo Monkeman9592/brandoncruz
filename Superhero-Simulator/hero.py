@@ -1,7 +1,7 @@
 import random
 from unicodedata import name
 from ability import Ability
-#from armor import armors
+from armor import Armors
 
 class Hero:
 
@@ -21,15 +21,21 @@ class Hero:
     self.ability.append(ability)
     return self.ability
 
-
   def attack(self):
     attack_value = 0
-
     for ability in self.ability:
       attack_value += ability.attack()
     return attack_value
 
+  def add_armor(self,armor):
+    self.armor.append(armor)
+    return self.armor
 
+  def defend(self):
+    defend_value = 0 
+    for armor in self.armor:
+      defend_value += armor.defend()
+    return defend_value
 
 
 
@@ -71,9 +77,12 @@ if __name__ == "__main__":
     ability3 = Ability ("punch", 100)  
 
     hero1.add_ability(ability2)
-    hero1.add_ability(ability1)
-    hero1.add_ability(ability3)
+    hero2.add_ability(ability3)
 
     print(hero1.attack())
+
+    armor1 = Armors ("rusty spoons", 100)
+
+    print(hero1.defend())
 
 
