@@ -82,6 +82,7 @@ if __name__ == "__main__":
     print(hero1.attack())
 
     armor1 = Armors ("rusty spoons", 100)
+    hero1.add_armor(armor1)
 
     print(hero1.defend())
 

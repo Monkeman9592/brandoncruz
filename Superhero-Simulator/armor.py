@@ -14,6 +14,6 @@ class Armors:
 
         return defend_value
 
-Armor1 = Armors("strong defence", 100)
+Armor1 = Armors("strong defence", 22)
 
 print(Armor1.defend)
