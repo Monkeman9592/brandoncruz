@@ -1,6 +1,6 @@
 from random import random
 
-class armer_class:
+class armers:
     def __inti__(self , name = "brandon", armer_strength = 100):
         self.name = name
         self.armer_strength = armer_strength
@@ -12,5 +12,5 @@ class armer_class:
 
         return block
 
-Armor = armer_class("strong defence", 100)
+Armor = armers("strong defence", 100)
 Armor.max_block()

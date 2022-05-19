@@ -1,48 +1,79 @@
 import random
-import ability
-import armor
+from unicodedata import name
+from ability import Ability
+#from armor import armors
 
 class Hero:
 
 
   def __init__(self, name = "Hero", starting_health=1000):
-    '''Instance properties:
-      name: Her0
-      starting_health: integer
-      current_health: integer
-    '''
-
+    
     self.name = name
 
     self.starting_health = starting_health
 
     self.current_health = starting_health 
 
+    self.armor = []
+    self.ability = []
+  
+  def add_ability(self, ability):
+    self.ability.append(ability)
+    return self.ability
+
+
+  def attack(self):
+    attack_value = 0
+
+    for ability in self.ability:
+      attack_value += ability.attack()
+    return attack_value
+
+
+
+
+
+
+
+  
   def battle(self, opponent):
     ''' Current Hero will take turns battling the opponent hero passed in.
     '''
     heroes_names = []
+
     heroes_names.append(self.name)
     heroes_names.append(opponent.name)
 
     winner = random.choice (heroes_names)
-    print(winner)
-    # TODO: battle each hero until a victor emerges.
-    # Phases to implement:
-    #1) randomly choose winner, print the name of the victor
-    # Hint: Look into random library, more specifically the choice method
+    loser = []
+
+    for hero in heroes_names:
+      if hero!= winner:
+        loser.append (name)
+
+
+    print(f'{winner} has defeated {loser}')
+
+    return winner 
+
 
 if __name__ == "__main__":
-    # If you run this file from the terminal
-    # this block is executed.
+   
     hero1 = Hero("Wonder Woman")
     hero2 = Hero("Dumbledore")
 
     hero1.battle(hero2)
 
-
-
-
     
+
+    ability1 = Ability ("super fast", 100)
+    ability2 = Ability ("bark",100)
+    ability3 = Ability ("punch", 100)  
+
+    hero1.add_ability(ability2)
+    hero1.add_ability(ability1)
+    hero1.add_ability(ability3)
+
+    print(hero1.attack())
 
 

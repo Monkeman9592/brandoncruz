@@ -1,18 +1,22 @@
 from ast import Import
-from random import random
+import random
 
 
 class Ability:
-    def __inti__(self, name = "brandon", max_damage = 100):
+    def __init__ (self, name , max_damage):
         self.name = name
         self.max_damage = max_damage
 
+    def __repr__(self):
+        return f'Ability({self.name}, {self.max_damage})'
 
     def attack(self):
-        attack_value = random.range(0, self.max_damage)
+        attack_value = random.randrange(0, self.max_damage)
         print(attack_value)
 
         return attack_value
 
-ability = Ability("super fast", 100)
-ability.attack()
+ability1 = Ability("flight", 10)
+ability2 = Ability("strength", 100)
+
+print(ability1.attack)
