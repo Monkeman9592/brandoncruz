@@ -10,7 +10,7 @@ class Ability:
 
     def attack(self):
         attack_value = random.randrange(0, self.max_damage)
-        print(attack_value)
+    
 
         return attack_value
 

@@ -6,7 +6,7 @@ from armor import Armors
 class Hero:
 
 
-  def __init__(self, name = "Hero", starting_health=1000):
+  def __init__(self, name = "Hero", starting_health=100):
     
     self.name = name
 
@@ -25,6 +25,9 @@ class Hero:
     attack_value = 0
     for ability in self.ability:
       attack_value += ability.attack()
+
+    print(f"{self.name} has {attack_value} attack")
+
     return attack_value
 
   def add_armor(self,armor):
@@ -35,7 +38,16 @@ class Hero:
     defend_value = 0 
     for armor in self.armor:
       defend_value += armor.defend()
+
+    print(f"{self.name} has {defend_value} defense")
     return defend_value
+
+  def take_damage(self, incoming_damage):
+    damage = incoming_damage - self.defend()
+
+    if damage >= 0:
+      self.current_health -= damage 
+    
 
 
 
@@ -43,24 +55,34 @@ class Hero:
 
   
   def battle(self, opponent):
-    ''' Current Hero will take turns battling the opponent hero passed in.
-    '''
-    heroes_names = []
 
-    heroes_names.append(self.name)
-    heroes_names.append(opponent.name)
+    if not self.ability and not opponent.ability:
+      print("These heroes can't battle! They have no abilities. Average citizens they are.")
+    
+    fighting = True
+    while fighting:
 
-    winner = random.choice (heroes_names)
-    loser = []
-
-    for hero in heroes_names:
-      if hero != winner:
-        loser.append (name)
+      print(f"{self.name}: {self.current_health}")
+      print(f"{opponent.name}: {opponent.current_health}")
+      opponent.take_damage(self.attack())
+      self.take_damage(opponent.attack())
 
 
-    print(f'{winner} has defeated {loser}')
+      if self.current_health <= 0:
+        print(f"{opponent.name} is  victorious")
+        fighting = False
 
-    return winner 
+      elif opponent.current_health <= 0:
+        print(f"{self.name} is  victorious")
+        fighting = False
+
+      
+
+
+      
+
+    
+   
 
 
 if __name__ == "__main__":
@@ -68,7 +90,7 @@ if __name__ == "__main__":
     hero1 = Hero("Wonder Woman")
     hero2 = Hero("Dumbledore")
 
-    hero1.battle(hero2)
+    
 
     
 
@@ -79,11 +101,13 @@ if __name__ == "__main__":
     hero1.add_ability(ability2)
     hero2.add_ability(ability3)
 
-    print(hero1.attack())
+    #print(hero1.attack())
 
     armor1 = Armors ("rusty spoons", 100)
+    
     hero1.add_armor(armor1)
+    hero2.add_armor(armor1)
 
-    print(hero1.defend())
+    hero1.battle(hero2)
 
 

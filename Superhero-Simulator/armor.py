@@ -3,14 +3,14 @@ import random
 class Armors:
     def __init__(self , name , armor_strength ):
         self.name = name
-        self.armer_strength = armor_strength
+        self.armor_strength = armor_strength
 
     def __repr__(self): 
-       return f'Armors({self.name}, {self.armer_strength})'
+       return f'Armors({self.name}, {self.armor_strength})'
 
     def defend(self):
-        defend_value = random.randrange(0, self.armer_strength)
-        print(defend_value)
+        defend_value = random.randrange(0, self.armor_strength)
+
 
         return defend_value
 
