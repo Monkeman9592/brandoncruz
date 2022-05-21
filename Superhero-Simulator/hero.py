@@ -54,7 +54,7 @@ class Hero:
     loser = []
 
     for hero in heroes_names:
-      if hero!= winner:
+      if hero != winner:
         loser.append (name)
 
 
