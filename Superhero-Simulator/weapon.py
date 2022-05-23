@@ -1,4 +1,5 @@
 improt random
+from ability import Ability
 
 class Weapon(Ability):
   def attack(self):
