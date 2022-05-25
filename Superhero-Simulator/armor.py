@@ -16,4 +16,4 @@ class Armors:
 
 Armor1 = Armors("strong defence", 100)
 
-print(Armor1.defend)
+print(Armor1.defend())

@@ -51,7 +51,7 @@ class Hero:
   def add_weapon(self, weapon_damage):
     self.weapon.append(weapon_damage)
 
-    return self.weapon_damage()
+    return self.weapon
 
 
     
