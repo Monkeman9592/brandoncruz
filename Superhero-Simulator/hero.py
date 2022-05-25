@@ -2,7 +2,7 @@ import random
 from unicodedata import name
 from ability import Ability
 from armor import Armors
-from weapon import weapon
+#from weapon import 
 class Hero:
 
 
@@ -16,7 +16,7 @@ class Hero:
 
     self.armor = []
     self.ability = []
-    self.wepon
+    self.weapon = []
   
   def add_ability(self, ability):
     self.ability.append(ability)
@@ -48,7 +48,12 @@ class Hero:
     if damage >= 0:
       self.current_health -= damage 
       
-  def add_weapon(self, weapon)
+  def add_weapon(self, weapon_damage):
+    self.weapon.append(weapon_damage)
+
+    return self.weapon_damage()
+
+
     
 
 

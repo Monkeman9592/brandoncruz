@@ -17,4 +17,4 @@ class Ability:
 ability1 = Ability("flight", 10)
 ability2 = Ability("strength", 100)
 
-print(ability1.attack)
+print(ability1.attack())

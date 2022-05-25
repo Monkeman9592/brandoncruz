@@ -1,12 +1,14 @@
-improt random
+import random
+
 from ability import Ability
 
 class Weapon(Ability):
+
   def attack(self):
-    attack_value = random.randrange(0, self.max_damage)
-    attack_value / self.max_damage()
+    attack_value = random.randrange(int(self.max_damage / 2), self.max_damage)
+
     
-    return attack
+    return attack_value
     
     
    
@@ -17,3 +19,6 @@ class Weapon(Ability):
     # TODO: Use integer division to find half of the max_damage value
     # then return a random integer between half of max_damage and max_damage
 
+Weapon1 = Weapon("spoons", 50)
+
+print(Weapon1.attack())
