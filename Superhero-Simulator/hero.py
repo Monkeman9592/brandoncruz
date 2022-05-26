@@ -2,21 +2,22 @@ import random
 from unicodedata import name
 from ability import Ability
 from armor import Armors
-#from weapon import 
+from weapon import Weapon
+
+
 class Hero:
 
 
   def __init__(self, name = "Hero", starting_health=100):
     
     self.name = name
-
     self.starting_health = starting_health
-
     self.current_health = starting_health 
-
     self.armor = []
     self.ability = []
     self.weapon = []
+    self.deaths = 0
+    self.kills = 0
   
   def add_ability(self, ability):
     self.ability.append(ability)
@@ -49,9 +50,15 @@ class Hero:
       self.current_health -= damage 
       
   def add_weapon(self, weapon_damage):
-    self.weapon.append(weapon_damage)
-
-    return self.weapon
+    self.Weapon.append(weapon_damage)
+    print(f"{self.name}has {weapon_damage}")
+    return self.Weapon
+  
+  def add_kill(self):
+        self.kills += 1
+    
+  def add_death(self):
+        self.deaths += 1
 
 
     
@@ -76,11 +83,17 @@ class Hero:
 
 
       if self.current_health <= 0:
-        print(f"{opponent.name} is  victorious")
+        self.add_death()
+        opponent.add_kill()
+
+        print(f"{opponent.name} has defeated {self.name}")
         fighting = False
 
       elif opponent.current_health <= 0:
-        print(f"{self.name} is  victorious")
+        opponent.add_death()
+        self.add_kill()
+
+        print(f"{self.name} has defeated {opponent.name}")
         fighting = False
 
       
@@ -89,8 +102,9 @@ class Hero:
       
 
     
-   
-
+ 
+hero1 = Hero("Wonder Woman")
+hero2 = Hero("Dumbledore")
 
 if __name__ == "__main__":
    
