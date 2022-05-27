@@ -84,19 +84,22 @@ class Hero:
 
       if self.current_health <= 0:
         opponent.add_death()
+        self.add_kill()
       
 
         print(f"{opponent.name} has defeated {self.name}")
         fighting = False
         print(f"{opponent.name} team kills: {opponent.deaths}")
+        print(f"{opponent.name}had {self.kills} kill")
 
       elif opponent.current_health <= 0:
         self.add_death()
-        
+        opponent.add_kill()
 
         print(f"{self.name} has defeated {opponent.name}")
         fighting = False
         print(f"{self.name} team kills: {self.deaths}")
+        print(f"{self.name} has {opponent.kills} kill ")
 
       
 
