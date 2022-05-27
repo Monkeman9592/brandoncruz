@@ -1,4 +1,4 @@
-from hero import hero1, hero2, Hero
+import random
 
 class Team:
     def __init__(self, name ):
@@ -27,10 +27,6 @@ class Team:
     def add_death(self):
         self.deaths += 1
 
-Team1 = Team("Blanh")
-Team1.add_hero(hero1)
-Team1.add_hero(hero2)
-Team1.view_all_heroes()
-        
+
         
 

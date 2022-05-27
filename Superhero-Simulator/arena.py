@@ -1,6 +1,6 @@
 from ability import Ability
 from weapon import Weapon
-from armor import Armor
+from armor import Armors
 from hero import Hero
 from team import Team
 

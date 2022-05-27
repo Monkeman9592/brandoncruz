@@ -3,7 +3,7 @@ from unicodedata import name
 from ability import Ability
 from armor import Armors
 from weapon import Weapon
-
+from team import Team
 
 class Hero:
 
@@ -54,12 +54,13 @@ class Hero:
     print(f"{self.name}has {weapon_damage}")
     return self.Weapon
   
+  
   def add_kill(self):
-        self.kills += 1
+      
+      self.kills += 1
     
   def add_death(self):
-        self.deaths += 1
-
+      self.deaths += 1
 
     
 
@@ -72,7 +73,6 @@ class Hero:
 
     if not self.ability and not opponent.ability:
       print("These heroes can't battle! They have no abilities. Average citizens they are.")
-    
     fighting = True
     while fighting:
 
@@ -83,18 +83,20 @@ class Hero:
 
 
       if self.current_health <= 0:
-        self.add_death()
-        opponent.add_kill()
+        opponent.add_death()
+      
 
         print(f"{opponent.name} has defeated {self.name}")
         fighting = False
+        print(f"{opponent.name} team kills: {opponent.deaths}")
 
       elif opponent.current_health <= 0:
-        opponent.add_death()
-        self.add_kill()
+        self.add_death()
+        
 
         print(f"{self.name} has defeated {opponent.name}")
         fighting = False
+        print(f"{self.name} team kills: {self.deaths}")
 
       
 
@@ -132,3 +134,8 @@ if __name__ == "__main__":
     hero1.battle(hero2)
 
 
+Team1 = Team("Blanh")
+Team1.add_hero(hero1)
+Team1.add_hero(hero2)
+Team1.view_all_heroes()
+        
