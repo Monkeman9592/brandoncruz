@@ -50,8 +50,8 @@ class Hero:
       self.current_health -= damage 
       
   def add_weapon(self, weapon_damage):
-    self.Weapon.append(weapon_damage)
-    print(f"{self.name}has {weapon_damage}")
+    self.weapon.append(weapon_damage)
+    print(f"{self.name}has {self.weapon}")
     return self.Weapon
   
   
@@ -62,6 +62,8 @@ class Hero:
   def add_death(self):
       self.deaths += 1
 
+
+  #def team_attack(self ):
     
 
 
