@@ -3,7 +3,7 @@ from unicodedata import name
 from ability import Ability
 from armor import Armors
 from weapon import Weapon
-from team import Team
+
 
 class Hero:
 
@@ -16,8 +16,12 @@ class Hero:
     self.armor = []
     self.ability = []
     self.weapon = []
+    
     self.deaths = 0
     self.kills = 0
+    
+  def __repr__(self):
+    return f'Hero({self.name}, {self.starting_health})'
   
   def add_ability(self, ability):
     self.ability.append(ability)
@@ -27,7 +31,6 @@ class Hero:
     attack_value = 0
     for ability in self.ability:
       attack_value += ability.attack()
-
     print(f"{self.name} has {attack_value} attack")
 
     return attack_value
@@ -51,39 +54,40 @@ class Hero:
       
   def add_weapon(self, weapon_damage):
     self.weapon.append(weapon_damage)
-    print(f"{self.name}has {self.weapon}")
-    return self.Weapon
+    print(f"{self.name}  weapon has {self.weapon}")
+    return self.weapon 
   
   
   def add_kill(self):
-      
-      self.kills += 1
+    self.kills += 1
     
   def add_death(self):
-      self.deaths += 1
-
-
-  #def team_attack(self ):
-    
-
-
-
+    self.deaths += 1
 
 
   
+
+
+
+
   def battle(self, opponent):
 
     if not self.ability and not opponent.ability:
       print("These heroes can't battle! They have no abilities. Average citizens they are.")
     fighting = True
     while fighting:
+      #print health and start of battle 
 
       print(f"{self.name}: {self.current_health}")
       print(f"{opponent.name}: {opponent.current_health}")
+      #attack method 
       opponent.take_damage(self.attack())
       self.take_damage(opponent.attack())
 
+      #test 
+      #print(f"{self.}")
 
+      #if health is < 0 adds kill and death / prints winning hero
       if self.current_health <= 0:
         opponent.add_death()
         self.add_kill()
@@ -91,6 +95,8 @@ class Hero:
 
         print(f"{opponent.name} has defeated {self.name}")
         fighting = False
+
+
         print(f"{opponent.name} team kills: {opponent.deaths}")
         print(f"{opponent.name}had {self.kills} kill")
 
@@ -100,6 +106,8 @@ class Hero:
 
         print(f"{self.name} has defeated {opponent.name}")
         fighting = False
+
+
         print(f"{self.name} team kills: {self.deaths}")
         print(f"{self.name} has {opponent.kills} kill ")
 
@@ -109,7 +117,7 @@ class Hero:
       
 
     
- 
+# our heros 
 hero1 = Hero("Wonder Woman")
 hero2 = Hero("Dumbledore")
 
@@ -138,9 +146,13 @@ if __name__ == "__main__":
 
     hero1.battle(hero2)
 
+    Weapon1 = Weapon("spoons", 50)
+    #teams
+    # Team1 = Team("Blanh")
+    # Team1.add_hero(hero1)
+    # Team1.add_hero(hero2)
+    # Team1.view_all_heroes()  
 
-Team1 = Team("Blanh")
-Team1.add_hero(hero1)
-Team1.add_hero(hero2)
-Team1.view_all_heroes()
-        
+#teams
+
+

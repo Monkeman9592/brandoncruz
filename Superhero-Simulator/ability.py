@@ -10,8 +10,6 @@ class Ability:
 
     def attack(self):
         attack_value = random.randrange(0, self.max_damage)
-    
-
         return attack_value
 
 ability1 = Ability("flight", 10)

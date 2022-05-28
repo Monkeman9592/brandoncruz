@@ -1,4 +1,5 @@
 import random
+from hero import Hero
 
 class Team:
     def __init__(self, name ):
@@ -27,5 +28,27 @@ class Team:
     def add_death(self):
         self.deaths += 1
 
+    def team_attack(self, another_team):
+        ''' if self.heroes gives me access to heroes on self's team 
+            then another_team.heroes gives me acces to heroes on another_team's team
+        '''
+        another_team = random.choice(another_team.heroes)
+        print(f"{another_team}")
+        self = random.choice(self.heroes)
+        print(F"{self}")
 
-        
+hero1 = Hero("Wonder Woman")
+hero2 = Hero("Dumbledore")
+
+
+
+Team1 = Team("Blanh")
+Team2 = Team("baka")
+
+Team1.add_hero(hero1)
+Team2.add_hero(hero2)
+
+
+
+#Team1.view_all_heroes()  
+Team1.team_attack(Team2)
