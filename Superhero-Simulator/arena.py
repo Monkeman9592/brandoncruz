@@ -10,6 +10,12 @@ class Arena:
         team_one: None
         team_two: None
     '''
+    Team1_alive = 0
+    Team2_alive = 0
+    
+    
+    
+    
     # TODO: create instance variables named team_one and team_two that
     # will hold our teams.
 
@@ -18,12 +24,17 @@ class Arena:
       return Ability with values from user Input
     '''
     name = input("What is the ability name?  ")
-    max_damage = input(
-      "What is the max damage of the ability?  ")
+    max_damage = input("What is the max damage of the ability?  ")
 
     return Ability(name, max_damage)
 
   def create_weapon(self):
+    
+    weapon = imput("what weapon would you like to make")
+    max_damage = imput("how much damage would you like to set to this weapon")
+    
+    return (name,max_damage)
+  
     '''Prompt user for Weapon information
         return Weapon with values from user input.
     '''
@@ -33,6 +44,11 @@ class Arena:
     pass
 
   def create_armor(self):
+    
+    armor = imput("what kind of armor would you like to give you hero")
+    armor_strength = imput("how much strength would you like to set this armor to")
+    
+    return (armor, armor_strength")
     '''Prompt user for Armor information
       return Armor with values from user input.
     '''
@@ -51,12 +67,18 @@ class Arena:
     while add_item != "4":
       add_item = input("[1] Add ability\n[2] Add weapon\n[3] Add armor\n[4] Done adding items\n\nYour choice: ")
       if add_item == "1":
+            
+            
         # TODO add an ability to the hero
         # HINT: First create the ability, then add it to the hero
       elif add_item == "2":
+            
+            
         # TODO add a weapon to the hero
         # HINT: First create the weapon, then add it to the hero
       elif add_item == "3":
+            
+            
         # TODO add an armor to the hero
         # HINT: First create the armor, then add it to the hero
     return hero
