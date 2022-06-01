@@ -36,6 +36,14 @@ class Team:
         print(f"{another_team}")
         self = random.choice(self.heroes)
         print(F"{self}")
+        if self.death = 0 
+            print("{self.hero} is ready to fight")
+        elif self.death = 1 
+            print("{self.hero} can no longer compeat")
+            
+    def revive (self):
+        self.current_health = 100
+        self.death = 0
 
 hero1 = Hero("Wonder Woman")
 hero2 = Hero("Dumbledore")
