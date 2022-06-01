@@ -1,5 +1,5 @@
 import random
-from hero import Hero
+
 
 class Team:
     def __init__(self, name ):
@@ -36,10 +36,17 @@ class Team:
         print(f"{another_team}")
         self = random.choice(self.heroes)
         print(F"{self}")
-        if self.death = 0 
-            print("{self.hero} is ready to fight")
-        elif self.death = 1 
-            print("{self.hero} can no longer compeat")
+
+    def team_attack(self, another_team):
+        another_team = random.choice(another_team.heroes)
+        print(f"{another_team}")
+        self = random.choice(self.heroes)
+        print(F"{self}")
+
+        if self.deaths >= 0:
+            print(f"{self} is ready to fight")
+        elif self.deaths <= 1: 
+            print(f"{self} can no longer compeat")
             
     def revive (self):
         self.current_health = 100
