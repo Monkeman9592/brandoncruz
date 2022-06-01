@@ -65,7 +65,9 @@ class Arena:
     hero = Hero(hero_name)
     add_item = None
     while add_item != "4":
+            
       add_item = input("[1] Add ability\n[2] Add weapon\n[3] Add armor\n[4] Done adding items\n\nYour choice: ")
+            
       if add_item == "1":
             
             
