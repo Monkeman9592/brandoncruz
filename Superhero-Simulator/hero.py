@@ -43,7 +43,6 @@ class Hero:
     defend_value = 0 
     for armor in self.armor:
       defend_value += armor.defend()
-
     print(f"{self.name} has {defend_value} defense")
     return defend_value
 
@@ -52,8 +51,8 @@ class Hero:
     if damage >= 0:
       self.current_health -= damage 
       
-  def add_weapon(self, weapon_damage):
-    self.weapon.append(weapon_damage)
+  def add_weapon(self, weapon):
+    self.weapon.append(weapon)
     print(f"{self.name}  weapon has {self.weapon}")
     return self.weapon 
   
@@ -74,12 +73,14 @@ class Hero:
 
     if not self.ability and not opponent.ability:
       print("These heroes can't battle! They have no abilities. Average citizens they are.")
+
     fighting = True
     while fighting:
       #print health and start of battle 
 
       print(f"{self.name}: {self.current_health}")
       print(f"{opponent.name}: {opponent.current_health}")
+      
       #attack method 
       opponent.take_damage(self.attack())
       self.take_damage(opponent.attack())
@@ -137,7 +138,7 @@ if __name__ == "__main__":
     hero1.add_ability(ability2)
     hero2.add_ability(ability3)
 
-    #print(hero1.attack())
+    print(hero1.attack())
 
     armor1 = Armors ("rusty spoons", 100)
     
