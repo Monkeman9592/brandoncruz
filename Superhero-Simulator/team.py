@@ -52,16 +52,13 @@ class Team:
         self.current_health = 100
         self.death = 0
 
-hero1 = Hero("Wonder Woman")
-hero2 = Hero("Dumbledore")
 
 
 
 Team1 = Team("Blanh")
 Team2 = Team("baka")
 
-Team1.add_hero(hero1)
-Team2.add_hero(hero2)
+
 
 
 
