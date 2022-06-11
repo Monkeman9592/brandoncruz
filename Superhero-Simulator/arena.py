@@ -1,3 +1,4 @@
+from ast import Return
 from ability import Ability
 from weapon import Weapon
 from armor import Armors
@@ -30,10 +31,10 @@ class Arena:
 
   def create_weapon(self):
     
-    weapon = imput("what weapon would you like to make")
-    max_damage = imput("how much damage would you like to set to this weapon")
+    weapon = input("what weapon would you like to make")
+    max_damage = input("how much damage would you like to set to this weapon")
     
-    return (name,max_damage)
+    return (weapon,max_damage)
   
     '''Prompt user for Weapon information
         return Weapon with values from user input.
@@ -45,21 +46,24 @@ class Arena:
 
   def create_armor(self):
     
-    armor = imput("what kind of armor would you like to give you hero")
-    armor_strength = imput("how much strength would you like to set this armor to")
+    armor = input("what kind of armor would you like to give you hero")
+    armor_strength = input("how much strength would you like to set this armor to")
     
-    return (armor, armor_strength")
+    return (armor, armor_strength)
     '''Prompt user for Armor information
       return Armor with values from user input.
     '''
     # TODO:This method will allow a user to create a piece of armor.
     #  Prompt the user for the necessary information to create a new armor object.
     #  return the new armor object with values set by user.
-      pass
+      # pass
 
   def create_hero(self):
     '''Prompt user for Hero information
       return Hero with values from user input.
+    '''
+    ''' if self.create_ability gives me access to create_ability methods of self 
+        then hero.add_ability gives me access to add_abilty method  of hero
     '''
     hero_name = input("Hero's name: ")
     hero = Hero(hero_name)
@@ -69,28 +73,35 @@ class Arena:
       add_item = input("[1] Add ability\n[2] Add weapon\n[3] Add armor\n[4] Done adding items\n\nYour choice: ")
             
       if add_item == "1":
-            
-            
+
+        new_ability = self.create_ability()
+        hero.add_ability(new_ability) 
+       
         # TODO add an ability to the hero
         # HINT: First create the ability, then add it to the hero
       elif add_item == "2":
-            
-            
+        new_weapon = self.create_weapon()
+        hero.add_weapon(new_weapon)
+
         # TODO add a weapon to the hero
         # HINT: First create the weapon, then add it to the hero
       elif add_item == "3":
-            
-            
+        new_armor = self.create_armor()
+        hero.add_armor(new_armor)
+
         # TODO add an armor to the hero
         # HINT: First create the armor, then add it to the hero
     return hero
 
+
   # build_team_one is provided to you
   def build_team_one(self):
     '''Prompt the user to build team_one '''
+    
     # This method should allow a user to create team one.
     # Prompt the user for the number of Heroes on team one
     # call self.create_hero() for every hero that the user wants to add to team one.
+
     # Add the created hero to team one.
     numOfTeamMembers = int(input("How many members would you like on Team One?\n"))
     for i in range(numOfTeamMembers):

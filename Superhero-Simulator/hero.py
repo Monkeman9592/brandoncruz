@@ -1,8 +1,5 @@
 import random
 from unicodedata import name
-from ability import Ability
-from armor import Armors
-from weapon import Weapon
 
 
 class Hero:
@@ -122,38 +119,38 @@ class Hero:
 hero1 = Hero("Wonder Woman")
 hero2 = Hero("Dumbledore")
 
-if __name__ == "__main__":
+# if __name__ == "__main__":
    
-    hero1 = Hero("Wonder Woman")
-    hero2 = Hero("Dumbledore")
+#     hero1 = Hero("Wonder Woman")
+#     hero2 = Hero("Dumbledore")
 
     
 
     
 
-    ability1 = Ability ("super fast", 100)
-    ability2 = Ability ("bark",100)
-    ability3 = Ability ("punch", 100)  
+#     ability1 = Ability ("super fast", 100)
+#     ability2 = Ability ("bark",100)
+#     ability3 = Ability ("punch", 100)  
 
-    hero1.add_ability(ability2)
-    hero2.add_ability(ability3)
+#     hero1.add_ability(ability2)
+#     hero2.add_ability(ability3)
 
-    print(hero1.attack())
+#     print(hero1.attack())
 
-    armor1 = Armors ("rusty spoons", 100)
+#     armor1 = Armors ("rusty spoons", 100)
     
-    hero1.add_armor(armor1)
-    hero2.add_armor(armor1)
+#     hero1.add_armor(armor1)
+#     hero2.add_armor(armor1)
 
-    hero1.battle(hero2)
+#     hero1.battle(hero2)
 
-    Weapon1 = Weapon("spoons", 50)
-    #teams
-    # Team1 = Team("Blanh")
-    # Team1.add_hero(hero1)
-    # Team1.add_hero(hero2)
-    # Team1.view_all_heroes()  
+#     Weapon1 = Weapon("spoons", 50)
+#     #teams
+#     # Team1 = Team("Blanh")
+#     # Team1.add_hero(hero1)
+#     # Team1.add_hero(hero2)
+#     # Team1.view_all_heroes()  
 
-#teams
+# #teams
 
 
