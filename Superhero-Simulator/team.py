@@ -37,12 +37,6 @@ class Team:
         self = random.choice(self.heroes)
         print(F"{self}")
 
-    def team_attack(self, another_team):
-        another_team = random.choice(another_team.heroes)
-        print(f"{another_team}")
-        self = random.choice(self.heroes)
-        print(F"{self}")
-
         if self.deaths >= 0:
             print(f"{self} is ready to fight")
         elif self.deaths <= 1: 
