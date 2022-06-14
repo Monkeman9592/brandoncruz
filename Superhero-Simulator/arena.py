@@ -134,7 +134,7 @@ class Arena:
     pass
 
   def team_battle(self):
-      
+     team_one.team_attack(team_two)
 
     '''Battle team_one and team_two together.'''
     # TODO: This method should battle the teams together.
@@ -143,6 +143,7 @@ class Arena:
     pass
 
   def show_stats(self):
+    
     '''Prints team statistics to terminal.'''
     # TODO: This method should print out battle statistics
     # including each team's average kill/death ratio.
