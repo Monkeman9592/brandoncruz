@@ -34,14 +34,17 @@ This data set shows the use of drugs from the ages of 12 to 65+ and how frequent
 my intrest in this CSV analysis is over the constant"war on drugs" campaign that started during Nixon.  With this data we can see what age drugs use in our youth is as well as categorize when they first get involved with as well as what they might progress to or when they might not feel an urge not to do any at all. Drug use is not just a youth problem today one of the biggest killers in the span of drugs is oxycodone and its addictive effects that do not only affect our youth but our elderly our early adults and in some cases even children have been exposed to this very destructive drug. Breaking down these data sets to see when groups are people are offered or prescribed at a certain age might be more addictive or destructive than other age groups. 
 
 
-1. Rates when drug use begins
-2. What drugs are more present in age groups
-3. Declining use of some drugs from older generations
-4. Oxycodone use for the elder ly and the youth
-5. What drugs may lead to others
-6. Hard drug use
-7. How frequently these drugs being used by age groups
-8. Does drug use eventually stop
+1. What is most prevalent between 13-21 marijuana or alcohol 
+2. What drugs are more present in age groups 13-21
+3. Is there a declining use of drugs from the age groups of 31-65+
+4. Is Oxycodone still used mainly by 40-65+ or by 20-30-year-olds
+5. Does early use of alcohol lead to cocaine use from the 13 - 25 age group
+6. Do meth and heroin uses have a drop the rate due to deaths
+7. How frequently are prescription drugs being used by 13-20-year-olds
+8. Does age affect what drugs are more common in a specific age range
+9. Can we predict use of youth to elderly in alcohol 
+10. does drug uses stop due to overdose or less frequent due to fewer uses
+
 
 
 perdictive modeling
