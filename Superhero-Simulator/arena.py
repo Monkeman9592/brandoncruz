@@ -96,12 +96,13 @@ class Arena:
 
   # build_team_one is provided to you
   def build_team_one(self):
-    numOfTeamMembers = int(input("How many members would you like on Team One?\n"))
+    team_name = input("\n Name of team one: ")
+    self.team_one = Team(team_name)
+
+
+    numOfTeamMembers = int(input("How many members would you like on Team {team_one}?\n"))
+
     for i in range(numOfTeamMembers):
-      if i > 1:
-        return True
-      elif i < 5:
-        return False 
       hero = self.create_hero()
       self.team_one.add_hero(hero)
 
@@ -117,12 +118,11 @@ class Arena:
   # Now implement build_team_two
   #HINT: If you get stuck, look at how build_team_one is implemented
   def build_team_two(self): 
-    numOfTeamMembers = int(input("How many members would you like on Team one?\n "))
+    team_name = input("\n Name of team two: ")
+    self.team_one = Team(team_name)
+
+    numOfTeamMembers = int(input("How many members would you like on Team {team_two}?\n "))
     for i in range(numOfTeamMembers):
-      if i > 1:
-        return True
-      elif i < 5:
-        return False 
       hero = self.create_hero()
       self.team_two.add_hero(hero)
     '''Prompt the user to build team_two'''
@@ -134,7 +134,8 @@ class Arena:
     pass
 
   def team_battle(self):
-     team_one.team_attack(team_two)
+    self.team_one.team_attack(self.team_two)
+    
 
     '''Battle team_one and team_two together.'''
     # TODO: This method should battle the teams together.
@@ -143,7 +144,12 @@ class Arena:
     pass
 
   def show_stats(self):
-    
+    print("Battle Stats")
+
+    team1_alive = 0
+    team2_alive = 0
+
+    for hero in self.team_one.living_memberes
     '''Prints team statistics to terminal.'''
     # TODO: This method should print out battle statistics
     # including each team's average kill/death ratio.

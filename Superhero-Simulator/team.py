@@ -28,6 +28,9 @@ class Team:
     def add_death(self):
         self.deaths += 1
 
+    
+        
+
     def team_attack(self, another_team):
         ''' if self.heroes gives me access to heroes on self's team 
             then another_team.heroes gives me acces to heroes on another_team's team
