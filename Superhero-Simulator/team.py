@@ -28,7 +28,12 @@ class Team:
     def add_death(self):
         self.deaths += 1
 
-    
+    def living_member(self):
+        if self.deaths() == 0:
+            print(f"{self} is ready to fight")
+        elif self.deaths <= 1: 
+            print(f"{self} can no longer compeat")
+
         
 
     def team_attack(self, another_team):
@@ -39,11 +44,8 @@ class Team:
         print(f"{another_team}")
         self = random.choice(self.heroes)
         print(F"{self}")
-
-        if self.deaths >= 0:
-            print(f"{self} is ready to fight")
-        elif self.deaths <= 1: 
-            print(f"{self} can no longer compeat")
+        self.living_member()
+        
             
     def revive (self):
         self.current_health = 100
@@ -60,4 +62,4 @@ Team2 = Team("baka")
 
 
 #Team1.view_all_heroes()  
-Team1.team_attack(Team2)
+# Team1.team_attack(Team2)

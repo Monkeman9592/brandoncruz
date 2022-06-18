@@ -1,4 +1,5 @@
 from ast import Return
+from locale import currency
 from ability import Ability
 from weapon import Weapon
 from armor import Armors
@@ -34,7 +35,7 @@ class Arena:
     weapon = input("what weapon would you like to make")
     max_damage = input("how much damage would you like to set to this weapon")
     
-    return (weapon,max_damage)
+    return Weapon(weapon,max_damage)
   
     '''Prompt user for Weapon information
         return Weapon with values from user input.
@@ -49,7 +50,7 @@ class Arena:
     armor = input("what kind of armor would you like to give you hero")
     armor_strength = input("how much strength would you like to set this armor to")
     
-    return (armor, armor_strength)
+    return Armors(armor, armor_strength)
     '''Prompt user for Armor information
       return Armor with values from user input.
     '''
@@ -149,7 +150,25 @@ class Arena:
     team1_alive = 0
     team2_alive = 0
 
-    for hero in self.team_one.living_memberes
+    for hero in self.team_one.living_member:
+      team1_alive += 1
+      print(f"{hero.name} and {hero.team_one.name} is alive")
+
+    for hero in self.team_two.living_member:
+      team2_alive += 1
+      print(f"{hero.name} and {hero.team_two.name} is alive")
+    
+    if team1_alive > team2_alive:
+      current_winner = self.team_one.name
+    else:
+      current_winner = self.team_two.name
+      
+
+
+    print(f"\n{self.team_one.name}'s there are: {team1_alive} alive")
+    print(f"{self.team_two.name}'s there are: {team2_alive} alive\n")
+    print(f"Winner {current_winner}/n")
+
     '''Prints team statistics to terminal.'''
     # TODO: This method should print out battle statistics
     # including each team's average kill/death ratio.
@@ -218,6 +237,6 @@ class Arena:
 
         else:
             #Revive heroes to play again
-            arena.team_one.revive_heroes()
-            arena.team_two.revive_heroes()
+            arena.team_one.revive()
+            arena.team_two.revive()
 
