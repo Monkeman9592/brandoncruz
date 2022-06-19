@@ -42,8 +42,8 @@ class Team:
         '''
         another_team = random.choice(another_team.heroes)
         print(f"{another_team}")
-        self = random.choice(self.heroes)
-        print(F"{self}")
+        heros = random.choice(self.heroes)
+        print(F"{heros}")
         self.living_member()
         
             

@@ -120,7 +120,7 @@ class Arena:
   #HINT: If you get stuck, look at how build_team_one is implemented
   def build_team_two(self): 
     team_name = input("\n Name of team two: ")
-    self.team_one = Team(team_name)
+    self.team_two = Team(team_name)
 
     numOfTeamMembers = int(input("How many members would you like on Team {team_two}?\n "))
     for i in range(numOfTeamMembers):
@@ -216,27 +216,30 @@ class Arena:
 
     #TODO: Now list the heroes from Team Two that survived
 
-    game_is_running = True
+game_is_running = True
 
     # Instantiate Game Arena
-    arena = Arena()
+arena = Arena()
 
     #Build Teams
-    arena.build_team_one()
-    arena.build_team_two()
+arena.build_team_one()
+arena.build_team_two()
 
-    while game_is_running:
 
-        arena.team_battle()
-        arena.show_stats()
-        play_again = input("Play Again? Y or N: ")
 
-        #Check for Player Input
-        if play_again.lower() == "n":
-            game_is_running = False
 
-        else:
-            #Revive heroes to play again
-            arena.team_one.revive()
-            arena.team_two.revive()
+while game_is_running:
+
+    arena.team_battle()
+    arena.show_stats()
+    play_again = input("Play Again? Y or N: ")
+
+    #Check for Player Input
+    if play_again.lower() == "n":
+        game_is_running = False
+
+    else:
+        #Revive heroes to play again
+        arena.team_one.revive()
+        arena.team_two.revive()
 
