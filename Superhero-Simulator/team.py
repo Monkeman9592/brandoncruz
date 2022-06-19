@@ -29,7 +29,7 @@ class Team:
         self.deaths += 1
 
     def living_member(self):
-        if self.deaths() == 0:
+        if self.deaths() >= 0:
             print(f"{self} is ready to fight")
         elif self.deaths <= 1: 
             print(f"{self} can no longer compeat")
@@ -40,10 +40,13 @@ class Team:
         ''' if self.heroes gives me access to heroes on self's team 
             then another_team.heroes gives me acces to heroes on another_team's team
         '''
+        
+
         another_team = random.choice(another_team.heroes)
         print(f"{another_team}")
-        heros = random.choice(self.heroes)
-        print(F"{heros}")
+        hero = random.choice(self.heroes)
+        print(F"{hero}")
+
         self.living_member()
         
             
