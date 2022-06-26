@@ -31,7 +31,7 @@ class Team:
     def living_member(self):
         if self.deaths() >= 0:
             print(f"{self} is ready to fight")
-        elif self.deaths <= 1: 
+        elif self.deaths() <= 1: 
             print(f"{self} can no longer compeat")
 
         
