@@ -1,32 +1,31 @@
-def bank(name,balence,deposit,withdrawal):
-    print(+ name + "Welcome to your bank account")
-    print("your current account balence is ", balence ,)
-    print("your new balence is")
+def main():
+    
 
-def User_Name__Input():
-    name = input("Enter name: ")
-    balence = int(input("What is your current acount balance: "))
-    print(f"{balence}")
+    name = str(input("Enter name: "))
+    
+    balance = int(input("What is your current acount balance: "))
+    print(name + "Welcome to your bank account")
+    print("your current account balence is ", balance ,)
+
+    print(f"{balance}")
     deposit = int(input("how much would you like to deposit: "))
     if deposit > 0:
         
         print("Do the deposit")
     else:
         print("do not deposit")
-    print(balence + deposit )
+    print(balance + deposit )
 
 
 
     withdrawal = int(input("how much would you like to withdrawal: "))
-    if withdrawal > 0:
+    if withdrawal < 0:
         print("make the withdraw ")
-        if withdrawal > balence:
+        if withdrawal > balance:
             print(" to big of a withdrawl")
+    else:
+        print("can not withdraw")
+    print(balance - withdrawal)
 
-    print(f"{balence}")
-
-    bank(name,balence,deposit,withdrawal)
-
-User_Name__Input()
-
+main()
 
