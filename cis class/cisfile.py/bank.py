@@ -1,33 +1,36 @@
 
-def deposit(balance,dep):
-    if dep > 0:
-        
+def deposit(dep,balance):
+    if dep > 0:        
         print("Do the deposit")
+        print("your new balance is: ")
+        
     else:
         print("do not deposit")
     
-def withdrawal(balance,wd):
-    if wd < 0:
-        print("make the withdraw ")
-        if wd > balance:
-            print(" to big of a withdrawl")
+def withdrawal(wd,balance):
+    if wd > balance:
+        print("invalid withdrawal")
+        
+        
+
+    elif wd < balance:
+        print("your new balance is: ",)
     else:
-        print("can not withdraw")
-    print(balance - wd)
+       print("can not make the withdrawal")
+    
 
 def main():
     name = str(input("Enter name: "))
     balance = int(input("What is your current acount balance: "))
     print(name + " Welcome to your bank account")
-    print("your current account balence is ",f"{balance}"  )
-
+    print("your current account balence is ", balance  )
     dep = int(input("how much would you like to deposit: "))
-    print("your new balance is: " ,balance + dep)
-
+    deposit(dep,balance)
+    print(balance + dep)
     wd = int(input("how much would you like to withdrawal: "))
-    print("your new balance is: ",balance - wd)
+    withdrawal(wd,balance)
+    print(balance - wd )
 
-    deposit(name,balance,dep,)
-    withdrawal(name,balance,wd)
-
+  
 main()
+
