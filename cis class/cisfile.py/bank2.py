@@ -6,6 +6,7 @@ def select(menu):
         print("your current account balence is ", balance  )
         run = True
         return run
+
     elif menu == "deposit":
             dep = int(input("how much would you like to deposit: "))
             if dep > 0:
@@ -15,30 +16,36 @@ def select(menu):
                 print(balance)
                 run = True
                 return run
+
             else:
                 print("do not deposit")
                 run = True
                 return run
+
     elif menu == "withdrawal":
             wd = int(input("how much would you like to withdrawal: "))
             if wd > balance:
                 print("invalid withdrawal")
                 run = True
                 return run
+
             elif wd <= balance:
                 print("your new balance is: ",)
                 balance = (balance - wd )
                 print(balance)
                 run = True
                 return run
+
             else:
                 print("can not make the withdrawal")
                 run = True
                 return run
+
     else:
         print("not a valid input")
         run = True
         return run
+
 def main():
     run = True
     while run:
