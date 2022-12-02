@@ -10,14 +10,25 @@ def withdrawal(wd):
 
 def main():
     global balance
-    name = str(input("Enter name: "))
+    try:
+        name = str(input("Enter name: "))
+    except:
+        print("invalid input")
     print(name + " Welcome to your Bank Account")
-    balance = int(input("What is your current acount balance: "))
-    print(name + " Welcome to your bank account")
-    menu = input("Menu options: deposit, withdrawal, else: ")
-    
+    try:
+        balance = int(input("What is your current acount balance: "))
+        print(name + " Welcome to your bank account")
+    except:
+        print("invalid input")
+    try:
+        menu = input("Menu options: deposit, withdrawal, else: ")
+    except:
+        print("invalid input")
     if menu == "deposit":
-        dep = int(input("how much would you like to deposit: "))
+        try:
+            dep = int(input("how much would you like to deposit: "))
+        except:
+            print("invalid input")
         if dep > 0:   
             deposit(dep)
             print("Do the deposit")
@@ -25,7 +36,10 @@ def main():
         else:
             print("do not deposit")
     elif menu == "withdrawal":
-        wd = int(input("how much would you like to withdrawal: "))    
+        try:
+            wd = int(input("how much would you like to withdrawal: "))   
+        except:
+            print("invalid input") 
         if wd <= balance:
             withdrawal(wd)
             print("your new balance is: ")
@@ -34,6 +48,9 @@ def main():
             print("invalid withdrawal")
     else:
         print("invalid input")
-    print(balance)
+    try:
+        print(balance)
+    except:
+        print("invalid input")
 main()
 
