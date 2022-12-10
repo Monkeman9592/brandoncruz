@@ -8,15 +8,15 @@ senseHat.low_light = True
 GREEN = (0, 255, 0)
 RED = (255, 0, 0)
 START_DELAY = 3
-MATRIX_MIN_VALUE = 0
-MATRIX_MAX_VALUE = 7
-MATRIX_SIZE = 8
+MIN_VALUE = 0
+MAX_VALUE = 7
+SIZE = 8
 
 while True:
     # variables:
-    gameOverFlag = False
-    growSnakeFlag = False
-    generateRandomFoodFlag = False
+    gameOver = False
+    growSnake = False
+    generateRandomFood = False
     snakeMovementDelay = 0.5
     snakeMovementDelayDecrease = -0.02
 
@@ -41,20 +41,20 @@ while True:
     # -----------------------------------
     #             game loop
     # -----------------------------------
-    while not gameOverFlag:
+    while not gameOver:
         # check if snake eats food:
         if foodPosX == snakePosX[0] and foodPosY == snakePosY[0]:
-            growSnakeFlag = True
-            generateRandomFoodFlag = True
+            growSnake = True
+            generateRandomFood = True
             snakeMovementDelay += snakeMovementDelayDecrease
 
         # check if snake bites itself:
         for i in range(1, len(snakePosX)):
             if snakePosX[i] == snakePosX[0] and snakePosY[i] == snakePosY[0]:
-                gameOverFlag = True
+                gameOver = True
 
         # check if game-over:
-        if gameOverFlag:
+        if gameOver:
             break
 
         # check joystick events:
@@ -74,8 +74,8 @@ while True:
                 movementX = 0
 
         # grow snake:
-        if growSnakeFlag:
-            growSnakeFlag = False
+        if growSnake:
+            growSnake = False
             snakePosX.append(0)
             snakePosY.append(0)
 
@@ -88,14 +88,14 @@ while True:
         snakePosY[0] += movementY
 
         # check game borders:
-        if snakePosX[0] > MATRIX_MAX_VALUE:
-            snakePosX[0] -= MATRIX_SIZE
-        elif snakePosX[0] < MATRIX_MIN_VALUE:
-            snakePosX[0] += MATRIX_SIZE
-        if snakePosY[0] > MATRIX_MAX_VALUE:
-            snakePosY[0] -= MATRIX_SIZE
-        elif snakePosY[0] < MATRIX_MIN_VALUE:
-            snakePosY[0] += MATRIX_SIZE
+        if snakePosX[0] > MAX_VALUE:
+            snakePosX[0] -= SIZE
+        elif snakePosX[0] < MIN_VALUE:
+            snakePosX[0] += SIZE
+        if snakePosY[0] > MAX_VALUE:
+            snakePosY[0] -= SIZE
+        elif snakePosY[0] < MIN_VALUE:
+            snakePosY[0] += SIZE
 
         # spawn random food:
         if generateRandomFoodFlag:
