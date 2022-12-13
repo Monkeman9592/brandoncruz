@@ -3,7 +3,25 @@ import time
 import random
 
 def main():  
-    name = str(input("Enter name: "))
+    try:
+        name = str(input("Enter name: "))
+    except:
+        print("invalid input")
+    print(name + "play game", Points)
+
+    with open ("home/pi/text.txt","r") as f:
+        f_con = f.read()
+        print(f_con, end ="")
+
+        f_con = f.read()
+        print(f_con, end ="")
+
+        f_con = f.read()
+        print(f_con, end ="")
+
+
+    
+    
     
 
 
@@ -17,12 +35,13 @@ def main():
     MIN_VALUE = 0
     MAX_VALUE = 7
     SIZE = 8
+    POINTS = 0
 
     while True:
         # variables:
         gameOver = False
         growSnake = False
-        generateRandomFood = False
+        generateRandomFoodFlag = False
         snakeMovementDelay = 0.5
         snakeMovementDelayDecrease = -0.02
         scorecount = 0 
@@ -33,7 +52,7 @@ def main():
         # set default snake starting position (values are chosen by preference):
         PosX = [3]
         PosY = [6]
-        scorecount = [1]
+        
 
         # generate random food position:
         while True:
@@ -51,7 +70,7 @@ def main():
             ## snake eats food:
             if  foodPosX == PosX[0] and foodPosY == PosY[0]:
                 growSnake = True
-                generateRandomFood = True
+                generateRandomFoodFlag = True
                 snakeMovementDelay += snakeMovementDelayDecrease
             
             
@@ -63,6 +82,14 @@ def main():
 
             # game-over:
             if gameOver:
+                f = open("home/pi/test.txt","a")
+                try:
+                    with f as file:
+                        f.write(name + ":", Points, "\n',")
+                        
+                except Exception as e:
+                    print(e)
+                    print(name + "scored: ",Points)
                 break
 
             # joystick :
@@ -86,7 +113,7 @@ def main():
                 growSnake = False
                 PosX.append(0)
                 PosY.append(0)
-                scorecount.append(1)
+                Points = Points + 1
 
             # move snake:
             for i in range((len(PosX) - 1), 0, -1):
