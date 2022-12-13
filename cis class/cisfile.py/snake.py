@@ -3,29 +3,11 @@ import time
 import random
 
 def main():  
-    try:
-        name = str(input("Enter name: "))
-    except:
-        print("invalid input")
+    name = str(input("Enter name: "))
     print(name + "play game", Points)
-
-    with open ("home/pi/text.txt","r") as f:
-        f_con = f.read()
-        print(f_con, end ="")
-
-        f_con = f.read()
-        print(f_con, end ="")
-
-        f_con = f.read()
-        print(f_con, end ="")
-
-
+    fl = open("text.txt", "r")
+    print(fl.read())
     
-    
-    
-
-
-
     senseHat = SenseHat()
     senseHat.low_light = True
 
@@ -35,7 +17,7 @@ def main():
     MIN_VALUE = 0
     MAX_VALUE = 7
     SIZE = 8
-    POINTS = 0
+    Points = 0
 
     while True:
         # variables:
@@ -44,7 +26,7 @@ def main():
         generateRandomFoodFlag = False
         snakeMovementDelay = 0.5
         snakeMovementDelayDecrease = -0.02
-        scorecount = 0 
+        Points = 0 
 
         # start delay:
         time.sleep(START_DELAY)
@@ -82,14 +64,10 @@ def main():
 
             # game-over:
             if gameOver:
-                f = open("home/pi/test.txt","a")
-                try:
-                    with f as file:
-                        f.write(name + ":", Points, "\n',")
-                        
-                except Exception as e:
-                    print(e)
-                    print(name + "scored: ",Points)
+                f = open("/home/py/text.txt","a")
+                f.write(name+":", Points," \n," )
+                f.close()
+                print(name + " score ", Points)
                 break
 
             # joystick :
