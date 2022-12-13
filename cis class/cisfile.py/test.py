@@ -69,8 +69,7 @@ def main():
         else:
             x = x + 1
             print("invalid input")
-        if menu > 0 :
-            break
+       
 
 main()
 
