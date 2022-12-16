@@ -3,11 +3,9 @@ import time
 import random
  
 def main():  
-    
-
     senseHat = SenseHat()
     senseHat.low_light = True
- 
+
     GREEN = (0, 255, 0)
     RED = (255, 0, 0)
     START_DELAY = 3
@@ -16,9 +14,6 @@ def main():
     SIZE = 8
     points = 0
     end = 0
-
-    
-    
     name = str(input("Enter name: "))
     print(name + " Points: ", points)
     fl = open("text.txt","r")
@@ -31,23 +26,17 @@ def main():
         generateRandomFoodFlag = False
         snakeMovementDelay = 0.5
         snakeMovementDelayDecrease = -0.02
-        scorecount = 0
- 
         # start delay:
-        time.sleep(START_DELAY)
- 
-        # set default snake starting position (values are chosen by preference):
+        time.sleep(START_DELAY) 
+        # set default snake starting position 
         PosX = [3]
         PosY = [6]
-       
- 
         # generate random food position:
         while True:
             foodPosX = random.randint(0, 7)
             foodPosY = random.randint(0, 7)
             if foodPosX != PosX[0] or foodPosY != PosY[0]:
                 break
- 
         # set default snake starting direction (values are chosen by preference):
         movementX = 0
         movementY = -1
@@ -59,10 +48,7 @@ def main():
                 growSnake = True
                 generateRandomFoodFlag = True
                 snakeMovementDelay += snakeMovementDelayDecrease
-                #
-           
-           
- 
+             
             ## if snake bites itself:
             for i in range(1, len(PosX)):
                 if PosX[i] == PosX[0] and PosY[i] == PosY[0]:
@@ -82,10 +68,6 @@ def main():
                     sense = SenseHat()
                     sense.show_message("RIP BOZO", scroll_speed=0.05, text_colour=[100,100,100])
                     end = 1
-                
-                    
-                    
-                
 
             # joystick :
             events = senseHat.stick.get_events()
